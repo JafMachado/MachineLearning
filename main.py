@@ -33,8 +33,6 @@ for l in range(0,len(data)):
 			averages[l][j+8+1]+=data[l][i+j*24+96]/24
 	averages[l][0]=1
 
-averages=np.transpose(averages)
-
 y=np.ndarray(shape=(len(data),10), dtype=int, order='F')
 
 for i in range(0,10):
