@@ -17,12 +17,9 @@ import numpy as np
 #00-047  MFCCs,  4*12 VALORES, I.E., (MEDIA,VAR,min,MAX)
 #48-095  CHROMA, 12*4 VALORES, I.E., 12*(MEDIA,VAR,min,MAX)
 #96-263  Rhythm, 24*7 VALORES, I.E., 24*(MEDIA,MEDIANA,VAR,KURT,SKEW,min,MAX)
-#
 
 data=np.genfromtxt("ACCURACY/train_data.csv",delimiter=',')
 answers=np.genfromtxt("ACCURACY/train_labels.csv")
-#for i in range(0,7) :
-print(1 == answers[1])
 
 averages=np.ndarray(shape=(len(data),4+4+7), dtype=float, order='F')
 
@@ -41,5 +38,3 @@ print(averages[0:6])
 
 
 
-
-#data.close()
