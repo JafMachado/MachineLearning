@@ -35,7 +35,7 @@ for l in range(0,len(data)):
 		for i in range(0,24):
 			averages[l][j+8]+=data[l][i+j*24+96]/24
 
-print(averages[0:5])
+print(averages[0:6])
 
 
 
