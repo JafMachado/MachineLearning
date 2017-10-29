@@ -44,10 +44,3 @@ for i in range(0,10):
 		else:
 			y[l][i]=0
 print(y)
-
-X0=np.matmul(np.transpose(averages),averages)
-X1=np.linalg.inv(X0)
-X2=np.matmul(X1,np.transpose(averages))
-X3=np.matmul(X2,y)
-
-print(X3)
