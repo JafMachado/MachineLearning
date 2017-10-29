@@ -38,8 +38,15 @@ for l in range(0,len(data)):
 print(averages[0:6])
 
 
+y=np.ndarray(shape=(len(data),10), dtype=int, order='F')
 
-
+for i in range(0,10):
+	for l in range(0,len(data)):
+		if answers[l]==i+1:
+			y[l][i]=1
+		else:
+			y[l][i]=0
+print(y)
 
 
 #data.close()
