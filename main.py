@@ -21,19 +21,17 @@ import numpy as np
 data=np.genfromtxt("ACCURACY/train_data.csv",delimiter=',')
 answers=np.genfromtxt("ACCURACY/train_labels.csv")
 
-averages=np.ndarray(shape=(len(data),4+4+7), dtype=float, order='F')
+averages=np.ndarray(shape=(len(data),4+4+7+1), dtype=float, order='F')
 
 for l in range(0,len(data)):
 	for k in range(0,2):
 		for j in range(0,4):
 			for i in range(0,12):
-				averages[l][j+k*4]+=data[l][i+j*12+k*48]/12
+				averages[l][j+k*4+1]+=data[l][i+j*12+k*48]/12
 	for j in range(0,7):
 		for i in range(0,24):
-			averages[l][j+8]+=data[l][i+j*24+96]/24
-
-print(averages[0:6])
-
+			averages[l][j+8+1]+=data[l][i+j*24+96]/24
+	averages[l][0]=1
 
 y=np.ndarray(shape=(len(data),10), dtype=int, order='F')
 
